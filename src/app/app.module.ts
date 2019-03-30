@@ -12,8 +12,6 @@ import { HeaderComponent } from './components/header/header.component';
 
 import { DashboardCardComponent } from './components/dashboard-card/dashboard-card.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
-import { AngularFontAwesomeModule } from 'angular-font-awesome';
-
 
 @NgModule({
   declarations: [
