@@ -7,6 +7,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CarouselComponent } from './components/carousel/carousel.component';
+import { DashboardCardComponent } from './components/dashboard-card/dashboard-card.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { CarouselComponent } from './components/carousel/carousel.component';
     LoginComponent,
     HomeComponent,
     CarouselComponent,
+    DashboardCardComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, NgbModule],
   providers: [],
