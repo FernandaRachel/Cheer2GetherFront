@@ -17,13 +17,13 @@ import { DashboardCardComponent } from './components/dashboard-card/dashboard-ca
     LoginComponent,
     HomeComponent,
     CarouselComponent,
-    HeaderComponent
+    HeaderComponent,
+    DashboardCardComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    DashboardCardComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],
