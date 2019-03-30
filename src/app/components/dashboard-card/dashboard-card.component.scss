@@ -1,16 +1,32 @@
 .img-card {
   width: 21em;
   height: 20em;
+  position: relative;
   cursor: pointer;
 }
 
+.dashboard-item:hover {
+  p {
+    top: 10em;
+    left: 10em;
+    // z-index: 1;
+    display: inline;
+  }
+}
+
+.dashboard-item {
+  p {
+    display: none;
+  }
+}
+
+.dashboard-title {
+  font-weight: 700;
+  font-size: 30px
+}
+
 .img-card:hover {
-    background-color: gray;
-    opacity: 0.5;
+  background-color: gray;
+  opacity: 0.5;
 
-  }
-
-  .dashboard-title {
-    font-weight: 700;
-    font-size: 30px
-  }
+}
