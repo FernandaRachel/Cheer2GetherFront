@@ -1,0 +1,12 @@
+.header {
+    &__btns {
+        &__sign-in,
+        &__sign-up {
+            color: white;
+            text-transform: uppercase;
+        }
+        &__sign-in {
+            border-right: 1px solid white;
+        }
+    }   
+}
