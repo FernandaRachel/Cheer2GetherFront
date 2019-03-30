@@ -11,6 +11,9 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { HeaderComponent } from './components/header/header.component';
 
 import { DashboardCardComponent } from './components/dashboard-card/dashboard-card.component';
+import { MainPageComponent } from './pages/main-page/main-page.component';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+
 
 @NgModule({
   declarations: [
@@ -21,6 +24,7 @@ import { DashboardCardComponent } from './components/dashboard-card/dashboard-ca
     HeaderComponent,
     DashboardCardComponent,
     NewsPageComponent,
+    MainPageComponent,
   ],
   imports: [
     BrowserModule,
