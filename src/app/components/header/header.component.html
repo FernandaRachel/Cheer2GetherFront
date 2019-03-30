@@ -1,7 +1,28 @@
-<nav class="navbar header">
-    <a class="navbar-brand text-white header__logo" href="#">
-      Cheer2Gether
-    </a>
+<nav class="navbar navbar-expand-md header">
+  <a class="header__logo text-white" href="#">
+    <span class="site-name">Cheer2Gether</span>
+  </a>
+  <button class="navbar-toggler ml-auto custom-toggler header__toggler" type="button" data-toggle="collapse"
+    (click)="isCollapsed= !isCollapsed">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- The menu items -->
+  <!--<div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+  <div class="collapse navbar-collapse header__links" [ngbCollapse]="isCollapsed" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto header__links__ul">
+      <li class="navbar-link header__links__ul__li">
+        <a class="text-center header__links__ul__li__a" href="https://angular.io/tutorial">About Us</a>
+      </li>
+      <li class="navbar-link header__links__ul__li">
+        <a class="text-center header__links__ul__li__a" href="https://github.com/angular/angular-cli/wiki">News</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0 header__search">
+      <input class="form-control mr-sm-2 header__search__input" type="search" placeholder="Search" aria-label="Search">
+      <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+      <i></i>
+    </form>
     <a class="navbar-brand text-white header__btns" routerLink="/login">
       <button class="btn header__btns__sign-in">
         sign in
@@ -10,5 +31,5 @@
         sign up
       </button>
     </a>
-  </nav>
-  
+  </div>
+</nav>
