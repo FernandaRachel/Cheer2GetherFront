@@ -22,8 +22,27 @@ export class NewsPageComponent implements OnInit {
     this.user = this._sessionStorage.retrieve('user');
     this._socket.initSocket();
     this._socket.onMessage((resp) => {
-      this.comments.push(JSON.parse( resp.data));
-      console.log(this.comments);
+      // const data = {
+      //   type: 'comments',
+      //   message:
+      // };
+
+      const msgs = resp.data.split('}\n{');
+      for(let i = 0; i < msgs.length; i++) {
+          let msg = msgs[i];
+          if (i !== msgs.length - 1) {
+              msg += '}'
+          }
+          if (i !== 0) {
+              msg = '{' + msg
+          }
+
+          this.comments.unshift(JSON.parse(msg));
+
+      }
+
+      // this.comments.push(JSON.parse( resp.data));
+      console.log(this.comments.sort());
 
     });
   }
@@ -38,8 +57,9 @@ export class NewsPageComponent implements OnInit {
         from: {
           name: name,
         },
+        create_data: new Date(),
         content: this.message
-      }
+      };
       this._socket.send(obj);
       }
     }

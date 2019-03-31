@@ -63,13 +63,14 @@
   </div>
   <div class="form-group news-page__comments">
     <h3 class="news-page__comments__title">leave a comment</h3>
-    <textarea class="form-control" [(ngModel)]="message" cols="30" rows="10" (keypress)="sendMessage($event)">
+    <textarea class="form-control" [(ngModel)]="message" cols="30" rows="3" (keypress)="sendMessage($event)">
 
     </textarea>
+    <button class="btn"><i class="fas fa-paper-plane"></i></button>
     <div class="news-page__comments__item" *ngFor="let c of comments">
         <img src="../../../assets/images/avatar.png" alt="avatar">
         <span class="author">{{ c.from.name }}</span>
-        <span class="date">March 31, 2019 - 8am</span>
+        <span class="date">{{ c.create_data | date: 'dd/MM/yyyy hh:mm' || '-' }}</span>
         <p>{{ c.content }}</p>
       </div>
 
