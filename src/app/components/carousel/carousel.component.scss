@@ -1,3 +1,4 @@
+@import '../../../variables';
 
 $height: 23em;
 
@@ -11,4 +12,13 @@ $height: 23em;
   width: 100%;
   height: auto;
   position: absolute;
+}
+
+.carousel-caption {
+  @include mobile {
+    bottom: 90px;
+    h3 {
+      font-size: 22px;
+    }
+  }
 }

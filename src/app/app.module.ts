@@ -18,6 +18,7 @@ import { CommunityComponent } from './pages/community/community.component';
 import { NgxWebstorageModule } from 'ngx-webstorage';
 import { JwtModule, JwtModuleOptions, JwtHelperService } from '@auth0/angular-jwt';
 import { SocketService } from './shared/service/socket.service';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 
@@ -57,6 +58,7 @@ export function provideConfig() {
     NewsPageComponent,
     MainPageComponent,
     CommunityComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

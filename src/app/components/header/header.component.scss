@@ -9,10 +9,19 @@
         &:hover {
             text-decoration: none;
         }
+        @include mobile {
+            font-size: 24px;
+        }
     }
     &__links {
+        @include tablet {
+            text-align: center;
+        }
         &__ul {
             margin-left: 40px;
+            @include tablet {
+                margin-left: 0;
+            }
             &__li {
                 &__a{
                     color: white;
@@ -27,6 +36,9 @@
         }
     }
     &__search {
+        @include tablet {
+            display: inline-block;
+        }
         &__input {
             background-color: black;
             color: white;
@@ -39,10 +51,16 @@
                 box-shadow: none;
             }
         }
+        .search-link {
+            display: inline-block;
+        }
         &__icon {
             color: white;
             margin-right: 10px;
             font-size: 30px;
+            @include mobile {
+                margin-top: 20px;
+            }
         }
     }
     &__btns {

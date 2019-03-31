@@ -53,7 +53,16 @@
 .dashboard-title {
   font-weight: 700;
   font-size: 50px;
+  @include mobile {
+    font-size: 28px;
+  }
 }
 .dashboard-container {
   margin: 0 30px;
+  @media screen and (min-width: 1740px) {
+    margin: 0 120px;
+  }
+  @media screen and (min-width: 1957px) {
+    margin: 0 160px;
+  }
 }
