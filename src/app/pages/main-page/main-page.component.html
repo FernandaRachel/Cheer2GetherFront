@@ -18,3 +18,18 @@
 <hr class="p-5">
 
 <h3 class="text-white text-center">MY COMMMUNITIES</h3>
+
+
+<div class="d-flex flex-row flex-wrap justify-content-around">
+  <div *ngFor="let news of groupList">
+    <div class="card align-items-stretch" style="width: 18rem;">
+      <div class="card-body">
+        <p class="card-text">{{ news.title }}
+          content.</p>
+        <div class="float-right">
+          <button class="btn btn-primary">Entrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

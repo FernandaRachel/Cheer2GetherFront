@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SocialLoginModule, AuthServiceConfig } from 'angularx-social-login';
+import { GoogleLoginProvider, FacebookLoginProvider, LinkedInLoginProvider} from 'angularx-social-login';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -13,6 +15,19 @@ import { HeaderComponent } from './components/header/header.component';
 import { DashboardCardComponent } from './components/dashboard-card/dashboard-card.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
 
+
+
+const config = new AuthServiceConfig([
+  {
+    id: FacebookLoginProvider.PROVIDER_ID,
+    provider: new FacebookLoginProvider('320671691982969')
+  },
+]);
+
+export function provideConfig() {
+    debugger
+  return config;
+}
 
 @NgModule({
   declarations: [
@@ -30,9 +45,14 @@ import { MainPageComponent } from './pages/main-page/main-page.component';
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
-
+    SocialLoginModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: AuthServiceConfig,
+      useFactory: provideConfig
+    }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

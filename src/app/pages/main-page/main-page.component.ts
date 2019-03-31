@@ -9,6 +9,7 @@ import { MainPageService } from './service/main-page.service';
 export class MainPageComponent implements OnInit {
 
   public newsList = [];
+  public groupList = [];
 
   constructor(private _mainPageService: MainPageService) { }
 
@@ -16,6 +17,10 @@ export class MainPageComponent implements OnInit {
     this._mainPageService.getNews()
     .subscribe((response) => {
         this.callNews(response);
+    });
+    this._mainPageService.getGroups()
+    .subscribe((response) => {
+        this.groupList = response;
     });
   }
 

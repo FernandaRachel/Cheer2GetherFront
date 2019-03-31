@@ -1,3 +1,8 @@
-<p>
-  login works!
-</p>
+<button (click)="signInWithFB()">
+  Conectar com o facebook
+</button>
+<img src="{{ user.photoUrl }}">
+<div>
+  <h4>{{ user.name }}</h4>
+  <p>{{ user.email }}</p>
+</div>
