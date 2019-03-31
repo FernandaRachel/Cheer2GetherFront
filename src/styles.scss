@@ -7,4 +7,5 @@ html,
 body {
   background-color: $dark-gray !important;
   font-family: $font !important;
+  overflow-x: hidden;
 }

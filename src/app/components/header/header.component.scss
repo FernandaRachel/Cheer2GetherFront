@@ -31,9 +31,18 @@
             background-color: black;
             color: white;
             border-radius: 0;
+            border-top: none;
+            border-left: none;
+            border-right: none;
             &:focus {
-                border-color: white;
+                border-color: $orange;
+                box-shadow: none;
             }
+        }
+        &__icon {
+            color: white;
+            margin-right: 10px;
+            font-size: 30px;
         }
     }
     &__btns {
@@ -47,6 +56,9 @@
             &:hover {
                 background-color: white;
                 color: black;
+            }
+            &:focus {
+                box-shadow: none;
             }
         }
         &__sign-in {

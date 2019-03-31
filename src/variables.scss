@@ -6,3 +6,19 @@ $font: 'Work Sans', sans-serif;
 //colors
 $orange: #FFA34A;
 $dark-gray: #212121;
+
+$tablet-width: 768px;
+$mobile-width: 425px;
+
+//media queries mixins
+@mixin tablet {
+  @media (max-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$mobile-width}) {
+    @content;
+  }
+}
