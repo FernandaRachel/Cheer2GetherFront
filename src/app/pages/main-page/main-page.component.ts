@@ -13,15 +13,9 @@ export class MainPageComponent implements OnInit {
   public newsList = [];
   public groupList = [];
 
-  constructor(private _mainPageService: MainPageService,
-              private _socket: SocketService) { }
+  constructor(private _mainPageService: MainPageService) { }
 
   ngOnInit() {
-    const user = new User('Fernanda');
-    const msg = new Message(user, 'TESTING');
-    this._socket.initSocket();
-    this._socket.send(msg);
-
     this._mainPageService.getNews()
     .subscribe((response) => {
         this.callNews(response);

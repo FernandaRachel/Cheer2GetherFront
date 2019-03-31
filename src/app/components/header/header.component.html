@@ -18,19 +18,19 @@
         <a class="text-center header__links__ul__li__a" routerLink="/news">News</a>
       </li>
       <li class="navbar-link header__links__ul__li">
-          <a class="text-center header__links__ul__li__a">Sports</a>
-          <ul class="sub-menu">
-              <li><a routerLink="/baseball">Baseball</a></li>
-              <li><a routerLink="/basketball">Basketball</a></li>
-              <li><a routerLink="/f1">F1</a></li>
-              <li><a routerLink="/football">Football</a></li>
-              <li><a routerLink="/hockey">Hockey</a></li>
-              <li><a routerLink="/soccer">Soccer</a></li>
-              <li><a routerLink="/Ssrf">Surf</a></li>
-              <li><a routerLink="/tennis">Tennis</a></li>
-              <li><a routerLink="/ufc">UFC</a></li>
-            </ul>
-        </li>
+        <a class="text-center header__links__ul__li__a">Sports</a>
+        <ul class="sub-menu">
+          <li><a routerLink="/baseball">Baseball</a></li>
+          <li><a routerLink="/basketball">Basketball</a></li>
+          <li><a routerLink="/f1">F1</a></li>
+          <li><a routerLink="/football">Football</a></li>
+          <li><a routerLink="/hockey">Hockey</a></li>
+          <li><a routerLink="/soccer">Soccer</a></li>
+          <li><a routerLink="/Ssrf">Surf</a></li>
+          <li><a routerLink="/tennis">Tennis</a></li>
+          <li><a routerLink="/ufc">UFC</a></li>
+        </ul>
+      </li>
     </ul>
     <form class="form-inline my-2 my-lg-0 header__search">
       <input class="form-control mr-sm-2 header__search__input" type="search" placeholder="Search" aria-label="Search">
@@ -39,10 +39,17 @@
       </a>
       <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
     </form>
-    <a class="navbar-brand text-white header__btns" routerLink="/login">
+    <a *ngIf="!user; else logout" class="navbar-brand text-white header__btns" routerLink="/login">
       <button class="btn header__btns__sign-in">
         sign in
       </button>
     </a>
+    <ng-template #logout>
+      <a class="navbar-brand text-white header__btns" (click)="signOut()">
+        <button class="btn header__btns__sign-in">
+          sign out
+        </button>
+      </a>
+    </ng-template>
   </div>
 </nav>

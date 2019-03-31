@@ -44,9 +44,7 @@ export class LoginComponent implements OnInit {
 
    signOut(): void {
     this._sessionStorage.clear('user');
-    this.authService.signOut()
-    .then((v) => {
-      this._router.navigate(['/dashboard']);
-    });
+    this.authService.signOut();
+    this._router.navigate(['/dashboard']);
   }
 }

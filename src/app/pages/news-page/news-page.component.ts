@@ -36,7 +36,6 @@ export class NewsPageComponent implements OnInit {
       // const user = new User('Fernanda');
       // const msg = new Message(user, this.message);
       console.log(this.message);
-      {"from":{"name":"Fernanda"},"content":"TESTING"}
       const obj = {
         from: {
           name:"Waltton",
