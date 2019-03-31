@@ -14,6 +14,7 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { HeaderComponent } from './components/header/header.component';
 import { DashboardCardComponent } from './components/dashboard-card/dashboard-card.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
+import { NgxWebstorageModule } from 'ngx-webstorage';
 
 
 
@@ -45,7 +46,9 @@ export function provideConfig() {
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
-    SocialLoginModule
+    SocialLoginModule,
+    NgxWebstorageModule.forRoot(),
+
   ],
   providers: [
     {

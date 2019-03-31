@@ -5,9 +5,11 @@ import * as socketIo from 'socket.io-client';
 import { Observable } from 'rxjs';
 import { Event } from '@angular/router';
 
-const SERVER_URL = 'http://localhost:8080';
+const SERVER_URL = 'https://ws.cheeer2gether.com/';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class SocketService {
     private socket;
 
