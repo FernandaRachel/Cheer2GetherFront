@@ -5,20 +5,42 @@ import * as socketIo from 'socket.io-client';
 import { Observable } from 'rxjs';
 import { Event } from '@angular/router';
 
-const SERVER_URL = 'https://ws.cheeer2gether.com/';
+const SERVER_URL = 'wss://ws.cheeer2gether.com/ws';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SocketService {
     private socket;
+    private msgQueue;
 
     public initSocket(): void {
-        this.socket = socketIo(SERVER_URL);
+        this.socket = new WebSocket(SERVER_URL);
+        this.msgQueue = [];
+
+        this.sendQueued = this.sendQueued.bind(this);
+        this.socket.onopen = this.sendQueued;
+
+        this.messageReceived = this.messageReceived.bind(this);
+        this.socket.onmessage = this.messageReceived;
+    }
+
+    public messageReceived(message: string) {
+        console.log(message);
+    }
+
+    public sendQueued() {
+        for(let i = 0; i< this.msgQueue.length; i++){
+            this.send(this.msgQueue[i])
+        }
     }
 
     public send(message: Message): void {
-        this.socket.emit('message', message);
+        if (this.socket.readyState === 1) {
+            this.socket.send(JSON.stringify(message));
+        } else {
+            this.msgQueue.push(message);
+        }
     }
 
     public onMessage(): Observable<Message> {
