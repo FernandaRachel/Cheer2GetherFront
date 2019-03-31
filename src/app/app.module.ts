@@ -12,6 +12,7 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { HeaderComponent } from './components/header/header.component';
 import { DashboardCardComponent } from './components/dashboard-card/dashboard-card.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
+import { CommunityComponent } from './pages/community/community.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { MainPageComponent } from './pages/main-page/main-page.component';
     DashboardCardComponent,
     NewsPageComponent,
     MainPageComponent,
+    CommunityComponent,
   ],
   imports: [
     BrowserModule,
