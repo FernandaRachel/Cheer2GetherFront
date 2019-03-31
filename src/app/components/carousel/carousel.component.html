@@ -1,22 +1,24 @@
 
-<ngb-carousel>
-  <ng-template ngbSlide>
-  <div class="carousel-div">
-      <img class="img-carousel img-fluid" src="../../../assets/images/bola.jpg" alt="Random first slide">
+<div *ngIf="news">
+
+<ngb-carousel >
+  <ng-template ngbSlide *ngFor="let new of news ">
+    <div class="carousel-div">
+      <img class="img-carousel" [src]="new.media" alt="">
       <div class="carousel-caption">
-        <h3>First slide label</h3>
-        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        <h3>{{ new.title}}</h3>
+        <!-- <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p> -->
       </div>
     </div>
   </ng-template>
-  <ng-template ngbSlide>
-  <div class="carousel-div">
-      <img class="img-carousel img-fluid" src="../../../assets/images/basquete.jpg" alt="Random first slide">
-      <div class="carousel-caption">
-        <h3>First slide label</h3>
-        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-      </div>
+  <!-- <ng-template ngbSlide>
+    <img class="img-carousel" src="../../../assets/images/basquete.jpg" alt="">
+    <div class="carousel-caption">
+      <h3>First slide label</h3>
+      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
     </div>
-  </ng-template>
+  </ng-template> -->
 
 </ngb-carousel>
+
+</div>
