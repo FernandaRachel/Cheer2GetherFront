@@ -18,6 +18,7 @@ import { CommunityComponent } from './pages/community/community.component';
 import { NgxWebstorageModule } from 'ngx-webstorage';
 import { JwtModule, JwtModuleOptions, JwtHelperService } from '@auth0/angular-jwt';
 import { SocketService } from './shared/service/socket.service';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -61,6 +62,7 @@ export function provideConfig() {
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     NgbModule,
     HttpClientModule,
     SocialLoginModule,

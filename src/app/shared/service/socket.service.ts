@@ -13,10 +13,12 @@ const SERVER_URL = 'wss://ws.cheeer2gether.com/ws';
 export class SocketService {
     private socket;
     private msgQueue;
+    private msgListners;
 
     public initSocket(): void {
         this.socket = new WebSocket(SERVER_URL);
         this.msgQueue = [];
+        this.msgListners = [];
 
         this.sendQueued = this.sendQueued.bind(this);
         this.socket.onopen = this.sendQueued;
@@ -26,7 +28,12 @@ export class SocketService {
     }
 
     public messageReceived(message: string) {
+        console.log('message');
         console.log(message);
+
+        for (let i = 0; i < this.msgListners.length; i++) {
+            this.msgListners[i](message);
+        }
     }
 
     public sendQueued() {
@@ -35,19 +42,23 @@ export class SocketService {
         }
     }
 
-    public send(message: Message): void {
+    public send(obj: any): void {
         if (this.socket.readyState === 1) {
-            this.socket.send(JSON.stringify(message));
+            this.socket.send(JSON.stringify(obj));
         } else {
-            this.msgQueue.push(message);
+            this.msgQueue.push(obj);
         }
     }
 
-    public onMessage(): Observable<Message> {
-        return new Observable<Message>(observer => {
-            this.socket.on('message', (data: Message) => observer.next(data));
-        });
+    public onMessage(callback: Function) {
+      this.msgListners.push(callback);
     }
+
+    // public onMessage(): Observable<Message> {
+    //     return new Observable<Message>(observer => {
+    //         this.socket.on('message', (data: Message) => observer.next(data));
+    //     });
+    // }
 
     public onEvent(event: Event): Observable<any> {
         return new Observable<Event>(observer => {
