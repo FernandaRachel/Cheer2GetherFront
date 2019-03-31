@@ -17,8 +17,16 @@ $height: 23em;
 .carousel-caption {
   @include mobile {
     bottom: 90px;
+
     h3 {
       font-size: 22px;
     }
+  }
+
+  background-color: #000000;
+  opacity: 0.7;
+
+  h3{
+    opacity: 1;
   }
 }

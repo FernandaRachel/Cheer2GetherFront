@@ -31,6 +31,9 @@
           <li><a routerLink="/ufc">UFC</a></li>
         </ul>
       </li>
+      <li class="navbar-link header__links__ul__li" *ngIf="user">
+        <a class="text-center header__links__ul__li__a" routerLink="/main-page">Feed</a>
+      </li>
     </ul>
     <form class="form-inline my-2 my-lg-0 header__search">
       <input class="form-control mr-sm-2 header__search__input" type="search" placeholder="Search" aria-label="Search">
