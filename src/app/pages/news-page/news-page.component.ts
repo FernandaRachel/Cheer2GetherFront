@@ -25,6 +25,21 @@ export class NewsPageComponent implements OnInit {
       //   type: 'comments',
       //   message:
       // };
+
+      let msgs = resp.data.split('}\n{');
+      for(let i = 0; i < msgs.length; i++) {
+          let msg = msgs[i];
+          if (i !== msgs.length - 1) {
+              msg += '}'
+          }
+          if (i !== 0) {
+              msg = '{' + msg
+          }
+
+          this.comments.push(JSON.parse(msg));
+
+      }
+
       this.comments.push(JSON.parse( resp.data));
       console.log(this.comments);
 
