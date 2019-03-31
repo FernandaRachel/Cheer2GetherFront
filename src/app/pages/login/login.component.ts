@@ -36,13 +36,17 @@ export class LoginComponent implements OnInit {
   }
 
   signInWithFB(): void {
-    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
-    this._router.navigate(['/main-page']);
+    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID)
+    .then((v) => {
+      this._router.navigate(['/main-page']);
+    });
   }
 
    signOut(): void {
     this._sessionStorage.clear('user');
-    this.authService.signOut();
-    this._router.navigate(['/dashboard']);
+    this.authService.signOut()
+    .then((v) => {
+      this._router.navigate(['/dashboard']);
+    });
   }
 }
