@@ -19,6 +19,7 @@ import { NgxWebstorageModule } from 'ngx-webstorage';
 import { JwtModule, JwtModuleOptions, JwtHelperService } from '@auth0/angular-jwt';
 import { SocketService } from './shared/service/socket.service';
 import { FooterComponent } from './components/footer/footer.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -34,7 +35,6 @@ const config = new AuthServiceConfig([
 export function tokenGetter() {
   console.log('tokenGetter');
 
-  debugger
   const helper = new JwtHelperService();
   const token = localStorage.getItem('user');
   const decodedToken = helper.decodeToken(token);
@@ -63,6 +63,7 @@ export function provideConfig() {
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     NgbModule,
     HttpClientModule,
     SocialLoginModule,

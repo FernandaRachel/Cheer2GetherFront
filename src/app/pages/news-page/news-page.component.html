@@ -7,38 +7,38 @@
     <div>Roger Federer continued his fine form on the American hard courts to beat Canadian teenager Denis Shapovalov and reach the Miami Open final.
 
         The 37-year-old Swiss, who lost in the Indian Wells final to Dominic Thiem, won 6-2 6-4 to reach back-to-back ATP Masters 1000 finals.
-        
+
         Federer will meet defending champion John Isner for the title on Sunday.
-        
+
         Isner, 33, reached another Miami final by ending Canadian teenager Felix Auger-Aliassime's historic run.
-        
+
         The American edged out his 18-year-old opponent, who was playing in his first Masters semi-final, in a 7-6 (7-3) 7-6 (7-4) victory.
-        
+
         Federer ensured he reached his fifth Miami Open final by beating 19-year-old Shapovalov, who was not even born when the 20-time Grand Slam winner made his debut at the Florida tournament in March 1999.
-        
+
         It was the biggest age gap between opponents in the quarter-finals or later of an ATP Masters 1000 and the biggest gap in Federer's career.
-        
+
         Experience showed as Federer won 61% of the points in a one-sided first set, dropping just four points on his own serve, as he wrapped up the opener in 36 minutes.
-        
+
         Shapovalov, who will rise into the world's top 20 next week, failed to convert two break points in Federer's first service game of the second set - and was punished in the next game as his illustrious opponent pounced to lead by a set and break.
-        
+
         Federer, described by Shapovalov as his idol, was unable to take a match point at 5-3 before clinically rounding off victory in one hour and 14 minutes on his own serve.
-        
+
         Beaten Auger-Aliassime will 'go to the very top'
         John Isner
         John Isner, who has won 11 matches in a row at the Miami Open, is aiming to become the first American to defend his Miami title since AndreAgassi in 2003
         In Friday's first semi-final, Auger-Aliassime was left to rue missed chances, failing to serve out at 5-3 in the first set and 5-4 in the second, as Isner fought back to edge both sets in the tie-breaks.
-        
+
         Auger-Aliassime, aged 18 and 233 days, is the youngest man in the tournament's 35-year history to reach the last four, having beaten a 14-year record set by Spanish 17-time major winner Rafael Nadal.
-        
+
         Despite the inevitable frustrations of not taking his chances against Isner, the Canadian qualifier will reflect positively on a remarkable week that has announced his arrival as one of the sport's brightest young talents.
-        
+
         Felix Auger-Aliassime
         Felix Auger-Aliassime received a standing ovation as he made his way off court after losing to Isner
         His performances in Florida mean he will be the first male player born in the 2000s to reach the world's top 50, climbing up to 33rd when the rankings are released on Monday.
-        
+
         "Felix can get to the very top," Isner, who has won nine of his 10 sets in Miami in tie-breaks, said.
-        
+
         "I can't say enough good things about him. He has got it all. He is very humble and won't let success get to him."</div>
 
   </div>
@@ -63,10 +63,23 @@
   </div>
   <div class="form-group news-page__comments">
     <h3 class="news-page__comments__title">leave a comment</h3>
-    <textarea class="form-control" name="" id="" cols="30" rows="10">
+    <textarea class="form-control" [(ngModel)]="message" cols="30" rows="10" (keypress)="sendMessage($event)">
 
     </textarea>
-    <div class="news-page__comments__item">
+    <div class="news-page__comments__item" *ngFor="let c of comments">
+        <img src="../../../assets/images/avatar.png" alt="avatar">
+        <span class="author">{{ c.from.name }}</span>
+        <span class="date">March 31, 2019 - 8am</span>
+        <p>{{ c.content }}</p>
+      </div>
+
+    </div>
+  </div>
+
+
+
+<!--
+   <div class="news-page__comments__item">
         <img src="../../../assets/images/avatar.png" alt="avatar">
         <span class="author">João da Silva</span>
         <span class="date">March 31, 2019 - 8am</span>
@@ -78,5 +91,4 @@
           <span class="date">March 31, 2019 - 8am</span>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       </div>
-    </div>
-  </div>
+ -->
