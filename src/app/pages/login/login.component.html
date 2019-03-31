@@ -1,10 +1,11 @@
 <button (click)="signInWithFB()">
   Conectar com o facebook
 </button>
-<button (click)="signInWithFB()">
+<button (click)="signOut()">
   Logout
 </button>
-<img src="{{ user.photoUrl }}">
+<img *ngIf="user.photoUrl"
+src="{{ user.photoUrl}}">
 <div>
   <h4>{{ user.name }}</h4>
   <p>{{ user.email }}</p>

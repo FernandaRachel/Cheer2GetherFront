@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { SocialLoginModule, AuthServiceConfig } from 'angularx-social-login';
+import { SocialLoginModule, AuthServiceConfig, AuthService } from 'angularx-social-login';
 import { GoogleLoginProvider, FacebookLoginProvider, LinkedInLoginProvider} from 'angularx-social-login';
 
 import { AppComponent } from './app.component';
@@ -16,7 +16,7 @@ import { DashboardCardComponent } from './components/dashboard-card/dashboard-ca
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { CommunityComponent } from './pages/community/community.component';
 import { NgxWebstorageModule } from 'ngx-webstorage';
-import { JwtModule, JwtModuleOptions } from '@auth0/angular-jwt';
+import { JwtModule, JwtModuleOptions, JwtHelperService } from '@auth0/angular-jwt';
 import { SocketService } from './shared/service/socket.service';
 
 
@@ -28,15 +28,21 @@ const config = new AuthServiceConfig([
   },
 ]);
 
-// const JWT_Module_Options: JwtModuleOptions = {
-//     config: {
-//         tokenGetter: yourTokenGetter,
-//         whitelistedDomains: yourWhitelistedDomains
-//     }
-// };
+
+
+export function tokenGetter() {
+  console.log('tokenGetter');
+
+  debugger
+  const helper = new JwtHelperService();
+  const token = localStorage.getItem('user');
+  const decodedToken = helper.decodeToken(token);
+  const expirationDate = helper.getTokenExpirationDate(token);
+  const isExpired = helper.isTokenExpired(token);
+  return token;
+}
 
 export function provideConfig() {
-    debugger
   return config;
 }
 
@@ -59,8 +65,12 @@ export function provideConfig() {
     HttpClientModule,
     SocialLoginModule,
     NgxWebstorageModule.forRoot(),
-    // JwtModule.forRoot()
-
+    // JwtModule.forRoot({
+    //   config: {
+    //     tokenGetter: tokenGetter,
+    //     whitelistedDomains: ['localhost:4200'],
+    //   }
+    // })
   ],
   providers: [
     {
