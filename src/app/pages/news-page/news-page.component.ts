@@ -47,7 +47,8 @@ export class NewsPageComponent implements OnInit {
     });
   }
 
-  public sendMessage(value) {
+  public sendMessage(value: KeyboardEvent) {
+    console.log(value);
     if(value.which === 13){
       // const user = new User('Fernanda');
       // const msg = new Message(user, this.message);
@@ -58,8 +59,10 @@ export class NewsPageComponent implements OnInit {
           name: name,
         },
         create_data: new Date(),
-        content: this.message
+        content: this.message,
+        photoUrl: this.user.photoUrl
       };
+      this.message = '';
       this._socket.send(obj);
       }
     }

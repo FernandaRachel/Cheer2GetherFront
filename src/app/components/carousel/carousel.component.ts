@@ -14,7 +14,7 @@ export class CarouselComponent implements OnInit {
   ngOnInit() {
     this._mainPageService.getNews()
     .subscribe((resp: Array<any>) => {
-      this.news = resp.slice(13, 15);
+      this.news = resp.slice(0, 2);
       console.log(this.news);
     });
   }
