@@ -89,7 +89,7 @@
             color: white;
             background-color: black;
             padding: 20px 30px;
-            margin: 100px 0;
+            margin: 60px 0;
             img {
                 width: 80px;
             }
@@ -136,6 +136,9 @@
                 background: black;
                 color: $orange;
             }
+        }
+        .input-box {
+            margin-bottom: 100px;
         }
     }
 }

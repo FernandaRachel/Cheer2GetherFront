@@ -59,7 +59,8 @@
             }
         }
     }
-    &__body { 
+    &__body {
+        padding-top: 70px;
         &__comment {
             color: white;
             background-color: black;
@@ -98,6 +99,26 @@
                     font-size: 18px;
                 }   
             }
+        }
+        &__comment-title {
+            color: white;
+            font-size: 22px;
+        }
+        textarea {
+            height: 100px;
+        }
+        .btn {
+            color: black;
+            background-color: $orange;
+            float: right;
+            margin-top: 20px;
+            &:hover {
+                background: black;
+                color: $orange;
+            }
+        }
+        .input-box {
+            margin-bottom: 100px;
         }
     }
 }

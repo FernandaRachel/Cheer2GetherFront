@@ -8,8 +8,9 @@
         <div class="card-body">
           <p class="card-text">{{ news.title }}</p>
           <div class="position-absolute icons">
-            <i class="far fa-thumbs-down"></i> 0
-            <i class="far fa-thumbs-up"></i> 0
+            <i class="icon far fa-thumbs-up"></i> 0
+            <i class="icon far fa-thumbs-down"></i> 0
+            <i class="icon fas fa-beer"></i> 0    
           </div>
         </div>
       </div>
@@ -17,22 +18,21 @@
   </div>
   <hr>
 
-  <h3 class="text-white text-center p-4">MY COMMUNITIES</h3>
+  <h3 class="text-white text-center p-4">MY GROUP</h3>
 
 
-  <div class="d-flex flex-row flex-wrap justify-content-around main-page__communities pb-4">
+  <div class="d-flex flex-row flex-wrap justify-content-around main-page__communities">
+    <div class="card align-items-stretch" style="width: 18rem;" routerLink="/community">
+      <img src="../../../assets/images/basket-group.jpg" class="card-img-top img-card" alt="basketball gorup">
+      <div class="card-body">
+        <p class="card-text">Watch basketball game on Wednesdays in New York City</p>
+      </div>
+    </div>
     <div *ngFor="let news of groupList">
       <div class="card align-items-stretch" style="width: 18rem;">
+        <img src="../../../assets/images/soccer-group.jpg" class="card-img-top img-card" alt="soccer gorup">
         <div class="card-body">
           <p class="card-text">{{ news.title }}</p>
-          <div class="float-right">
-            <div class="main-page__join p-2">
-              <i class="fas fa-user-plus main-page__join__icon"></i>
-              <span class="main-page__join__text">
-                join
-              </span>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -40,21 +40,31 @@
   <hr>
 
 
-  <h3 class="text-white text-center">EVENTS</h3>
+  <h3 class="text-white text-center p-4">UPCOMING EVENTS</h3>
 
 
   <div class="d-flex flex-row flex-wrap justify-content-around main-page__news">
     <div class="card align-items-stretch" style="width: 18rem;">
       <img src="../../../assets//images/jogo-corinthians.jpg" class="card-img-top img-card" alt="Jogo corinthians">
       <div class="card-body">
-        <p class="card-text">Campeonato Paulista - Corinthians x Santos </p><small>Hoje, 16:00</small>
+        <p class="card-text">Campeonato Paulista <br> Corinthians x Santos </p><small>Sunday 31st March, 16:00</small>
       </div>
     </div>
     <div class="card align-items-stretch" style="width: 18rem;">
-      <img src="../../../assets//images/jogo-corinthians.jpg" class="card-img-top img-card" alt="Jogo corinthians">
+        <img src="../../../assets//images/cadiff.jpg" class="card-img-top img-card" alt="Jogo corinthians">
+        <div class="card-body">
+          <p class="card-text">Premier League <br> Cardiff x	Chelsea	</p><small>Sunday 31st March, 16:00</small>
+        </div>
+    </div>
+    <div class="card align-items-stretch" style="width: 18rem;">
+      <img src="../../../assets//images/bristol.jpg" class="card-img-top img-card" alt="Jogo corinthians">
       <div class="card-body">
-        <p class="card-text">Campeonato Paulista - Corinthians x Santos </p><small>Quarta, 21:30</small>
+        <p class="card-text">Championship <br> Middlesbrough x Bristol City</p><small>Tuesday 2nd April, 19:45</small>
       </div>
     </div>
   </div>
+<div class="buttons">
+  <div class="create-btn"><i class="icon fas fa-plus-circle"></i>create new group</div>
+  <div class="search-btn"><i class="icon fas fa-search" style="color: white"></i>group search</div>
+</div>
 </div>

@@ -14,13 +14,8 @@
   &__news {
     padding-bottom: 70px;
   }
-  &__join {
-    background-color: $orange;
-    &:hover {
-      background-color: black;
-      color: $orange;
-      cursor: pointer;
-    }
+  &__communities {
+    padding-bottom: 70px;
   }
 }
 .img-card {
@@ -34,4 +29,47 @@
 .icons{
   bottom: 1em;
   right: 1em;
+}
+
+.card {
+  cursor: pointer;
+  &:hover {
+    background-color: black;
+    color: white;
+  }
+}
+
+.card-body {
+  .icon {
+    margin-left: 5px;
+    &:hover {
+      color: $orange;
+    }
+  }
+}
+
+.buttons {
+  text-align: right;
+  .create-btn {
+    background-color: black;
+    color: white;
+    padding:20px;
+    display: inline-block;
+    &:hover {
+      background-color: $orange;
+      cursor: pointer;
+    }
+  }
+  
+  .search-btn {
+    background-color: black;
+    color: rgb(150, 150, 150);
+    padding:20px;
+    padding-right: 40px;
+    display: inline-block;
+    margin-left: 40px;
+  }
+  .icon {
+    margin-right: 10px;
+  }
 }
