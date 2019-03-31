@@ -14,7 +14,7 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { HeaderComponent } from './components/header/header.component';
 import { DashboardCardComponent } from './components/dashboard-card/dashboard-card.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
-
+import { CommunityComponent } from './pages/community/community.component';
 
 
 const config = new AuthServiceConfig([
@@ -39,6 +39,7 @@ export function provideConfig() {
     DashboardCardComponent,
     NewsPageComponent,
     MainPageComponent,
+    CommunityComponent,
   ],
   imports: [
     BrowserModule,

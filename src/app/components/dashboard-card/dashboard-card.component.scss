@@ -1,14 +1,29 @@
+@import '../../../variables';
+
 .img-card {
-  width: 21em;
+  width: 20em;
   height: 20em;
   position: relative;
   cursor: pointer;
+  &:hover {
+    background-color: black;
+    opacity: 0.3;
+}
+  @include tablet {
+    background-color: black;
+    opacity: 0.3;
+  }
+  @include mobile {
+    width: 13em;
+    height: 13em;
+  }
 }
 
 .dashboard-item:hover {
   p {
-    top: 10em;
-    left: 10em;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
     // z-index: 1;
     display: inline;
   }
@@ -17,15 +32,28 @@
 .dashboard-item {
   p {
     display: none;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    &:hover {
+       cursor: pointer;        
+    }
+    @include tablet {
+      display: inline;
+    }
+    @include mobile {
+      padding: 30px !important;
+    }
   }
 }
 
 .dashboard-title {
   font-weight: 700;
-  font-size: 36px;
+  font-size: 50px;
 }
-
-.img-card:hover {
-  background-color: gray;
-  opacity: 0.5;
+.dashboard-container {
+  margin: 0 30px;
 }

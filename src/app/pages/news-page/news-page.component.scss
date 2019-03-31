@@ -1,0 +1,46 @@
+@import '../../../variables.scss';
+
+.news-page {
+    padding: 70px 0;
+    &__title {
+        color: white;
+        padding-bottom: 40px;
+        font-weight: 700;
+    }
+    &__image {
+        img {
+            width: 100%;
+        }
+    }
+    &__text {
+        color: white;
+        font-size: 20px;
+        padding: 70px 0;
+        font-size: 28px;
+    }
+    &__react-share {
+        background-color: black;
+        height: auto;
+        padding: 20px;
+        &__icon {
+            color: white;
+            margin: 10px 20px;
+            font-size: 40px;
+            &:hover {
+                cursor: pointer;
+                color: $orange;
+            }
+        }
+        span {
+            color: white;
+            text-align: center;
+        }
+    }
+    &__comments {
+        padding-top: 50px;
+        &__title {
+            color: white;
+            font-size: 22px;
+        }
+    }
+}
