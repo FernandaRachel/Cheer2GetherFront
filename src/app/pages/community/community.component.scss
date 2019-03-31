@@ -1,0 +1,103 @@
+@import '../../../variables';
+
+.community {
+    &__header {
+        background-color: $orange;
+        height: 300px;
+        padding: 50px 0;
+        &__title {
+            width: 60%;
+            margin: 0 auto;
+            display: inline-block;
+            margin-left: 140px;
+            vertical-align: middle;
+            @include tablet {
+                margin-left: 70px;
+                h2 {
+                    font-size: 28px;
+                    width: 100% !important;
+                }
+            }
+            @include mobile {
+                width: 100%;
+                margin: 0 20px;
+                h2 {
+                    font-size: 20px;
+                }
+            }
+            span {
+                color: black;
+            }
+            h2 {
+                color: black;
+                text-transform: uppercase;
+                font-weight: 800;
+                padding-top: 20px;
+                width: 60%
+            }
+        }
+        &__join {
+            text-align: right;
+            display: inline-block;
+            color: black;
+            margin-left: 270px;
+            vertical-align: middle;
+            cursor: pointer;
+            &__icon {
+                font-size: 40px;
+            }
+            @include tablet {
+                margin-right: 70px;
+            }
+            @include mobile {
+                margin: 30px 0;
+                width: 100%;
+                text-align: center;
+            }
+            &:hover {
+                font-size: 40px;
+            }
+        }
+    }
+    &__body { 
+        &__comment {
+            color: white;
+            background-color: black;
+            padding: 20px 30px;
+            margin: 60px 0;
+            img {
+                width: 80px;
+            }
+            .author {
+                margin-left: 40px;
+            }
+            .date {
+                margin-left: 20px;
+                font-weight: 300;
+                font-style: italic;
+                font-size: 16px;
+            }
+            p {
+                margin-top: 20px;
+            }
+            @include mobile {
+                img {
+                    width: 50px;
+                }
+                .author {
+                    margin-left: 0;
+                    font-size: 20px;
+                    display: block;
+                    margin-top: 20px;
+                }
+                .date {
+                    display: block;
+                    margin-left: 0;
+                }
+                p {
+                    font-size: 18px;
+                }   
+            }
+        }
+    }
+}
