@@ -1,11 +1,17 @@
 @import '../../../variables';
 
 .login {
-    padding-top: 200px;
+    padding-top: 130px;
+    @include tablet {
+        padding-top: 70px;
+    }
+    @include mobile {
+        padding-top: 30px;
+    }
 }
     
 .card{
-    height: 436px;
+    height: auto;
     margin-top: auto;
     margin-bottom: auto;
     width: 400px;
@@ -75,4 +81,12 @@ input:focus{
 .links a{
     margin-left: 4px;
     color: $orange;
+}
+
+.card-body {
+    .fb-login-button {
+        width: 100%;
+        margin: 40px auto 0;
+        text-align: center;
+    }
 }
