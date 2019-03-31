@@ -40,4 +40,22 @@
     </div>
   </div>
 
+  <hr>
+
+  <div class="d-flex flex-row flex-wrap justify-content-around main-page__news">
+      <div *ngFor="let news of newsList">
+        <div class="card align-items-stretch" style="width: 18rem;">
+          <img [src]="news.media" class="card-img-top img-card" [alt]="news.title">
+          <div class="card-body">
+            <p class="card-text">{{ news.title }}
+              content.</p>
+            <div class="position-absolute icons">
+              <i class="far fa-thumbs-down"></i> 0
+              <i class="far fa-thumbs-up"></i> 0
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
 </div>

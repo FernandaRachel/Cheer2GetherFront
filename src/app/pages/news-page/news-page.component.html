@@ -66,6 +66,7 @@
     <textarea class="form-control" [(ngModel)]="message" cols="30" rows="10" (keypress)="sendMessage($event)">
 
     </textarea>
+    <button class="btn"><i class="fas fa-paper-plane"></i></button>
     <div class="news-page__comments__item" *ngFor="let c of comments">
         <img src="../../../assets/images/avatar.png" alt="avatar">
         <span class="author">{{ c.from.name }}</span>

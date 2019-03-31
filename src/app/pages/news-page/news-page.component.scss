@@ -23,7 +23,7 @@
         color: white;
         font-size: 20px;
         padding: 70px 0;
-        font-size: 28px;
+        font-size: 24px;
         @include mobile {
             font-size: 20px;
             padding: 70px 20px;
@@ -89,7 +89,7 @@
             color: white;
             background-color: black;
             padding: 20px 30px;
-            margin: 60px 0;
+            margin: 100px 0;
             img {
                 width: 80px;
             }
@@ -122,6 +122,19 @@
                 p {
                     font-size: 18px;
                 }   
+            }
+        }
+        textarea {
+            height: 140px;
+        }
+        .btn {
+            color: black;
+            background-color: $orange;
+            float: right;
+            margin-top: 20px;
+            &:hover {
+                background: black;
+                color: $orange;
             }
         }
     }

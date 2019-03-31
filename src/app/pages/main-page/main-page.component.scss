@@ -9,7 +9,7 @@
   }
   hr {
     border-top: 1px solid white;
-    padding-bottom: 70px;
+    padding-bottom: 40px;
   }
   &__news {
     padding-bottom: 70px;
@@ -18,7 +18,7 @@
     background-color: $orange;
     &:hover {
       background-color: black;
-      color: white;
+      color: $orange;
       cursor: pointer;
     }
   }
