@@ -4,8 +4,6 @@
 <button (click)="signOut()">
   Logout
 </button>
-<img *ngIf="user.photoUrl"
-src="{{ user.photoUrl}}">
 <div>
   <h4>{{ user.name }}</h4>
   <p>{{ user.email }}</p>
@@ -15,11 +13,6 @@ src="{{ user.photoUrl}}">
     <div class="card">
       <div class="card-header">
         <h3>Sign In</h3>
-        <div class="d-flex justify-content-end social_icon">
-          <span><i class="fab fa-facebook-square"></i></span>
-          <!-- <span><i class="fab fa-google-plus-square"></i></span>
-          <span><i class="fab fa-twitter-square"></i></span> -->
-        </div>
       </div>
       <div class="card-body">
         <form>
@@ -43,6 +36,7 @@ src="{{ user.photoUrl}}">
             <input type="submit" value="Login" class="btn float-right login_btn">
           </div>
         </form>
+        <div class="fb-login-button" data-size="large" data-button-type="continue_with" data-auto-logout-link="false" data-use-continue-as="false" (click)="signInWithFB()"></div>
       </div>
       <div class="card-footer">
         <div class="d-flex justify-content-center links">
@@ -55,3 +49,5 @@ src="{{ user.photoUrl}}">
     </div>
   </div>
 </div>
+<div id="fb-root"></div>
+<!-- <script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.2"></script> -->

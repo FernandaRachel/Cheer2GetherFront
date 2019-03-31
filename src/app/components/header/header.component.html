@@ -9,14 +9,28 @@
 
   <!-- The menu items -->
   <!--<div class="collapse navbar-collapse" id="navbarSupportedContent">-->
-  <div class="collapse navbar-collapse header__links" [ngbCollapse]="isCollapsed" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto header__links__ul">
+  <div class="collapse navbar-collapse header__links menu" [ngbCollapse]="isCollapsed" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto header__links__ul menu-list">
       <li class="navbar-link header__links__ul__li">
-        <a class="text-center header__links__ul__li__a" href="https://angular.io/tutorial">About Us</a>
+        <a class="text-center header__links__ul__li__a" routerLink="/about">About Us</a>
       </li>
       <li class="navbar-link header__links__ul__li">
-        <a class="text-center header__links__ul__li__a" href="https://github.com/angular/angular-cli/wiki"routerLink="/news">News</a>
+        <a class="text-center header__links__ul__li__a" routerLink="/news">News</a>
       </li>
+      <li class="navbar-link header__links__ul__li">
+          <a class="text-center header__links__ul__li__a">Sports</a>
+          <ul class="sub-menu">
+              <li><a routerLink="/baseball">Baseball</a></li>
+              <li><a routerLink="/basketball">Basketball</a></li>
+              <li><a routerLink="/f1">F1</a></li>
+              <li><a routerLink="/football">Football</a></li>
+              <li><a routerLink="/hockey">Hockey</a></li>
+              <li><a routerLink="/soccer">Soccer</a></li>
+              <li><a routerLink="/Ssrf">Surf</a></li>
+              <li><a routerLink="/tennis">Tennis</a></li>
+              <li><a routerLink="/ufc">UFC</a></li>
+            </ul>
+        </li>
     </ul>
     <form class="form-inline my-2 my-lg-0 header__search">
       <input class="form-control mr-sm-2 header__search__input" type="search" placeholder="Search" aria-label="Search">
@@ -28,9 +42,6 @@
     <a class="navbar-brand text-white header__btns" routerLink="/login">
       <button class="btn header__btns__sign-in">
         sign in
-      </button>
-      <button class="btn header__btns__sign-up">
-        sign up
       </button>
     </a>
   </div>

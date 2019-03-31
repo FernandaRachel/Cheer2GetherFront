@@ -47,8 +47,7 @@
     }
     &__btns {
         margin-left: 30px;
-        &__sign-in,
-        &__sign-up {
+        &__sign-in {
             color: white;
             text-transform: uppercase;
             font-weight: 600;
@@ -61,13 +60,67 @@
                 box-shadow: none;
             }
         }
-        &__sign-in {
-            border-right: 1px solid white;
-        }
-
     }   
 }
 
 .custom-toggler .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
+
+
+/* Reset CSS */
+*, *:after, *:before{
+  }
+  /* Configura todos os links do nosso menu */
+  .menu a{
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+  /* Faz os <li>s ficarem na horizontal */
+  .menu > .menu-list > li{
+    float: left;
+    position: relative;
+  }
+  /* Configura os links do menu principal */
+  .menu > .menu-list > li > a {
+    padding: 20px;
+    margin: 0 5px;
+    background: #000;
+  }
+  /* Configura o fundo do menu principal quando com mouse hover */
+  .menu > .menu-list > li:hover a {
+    background: $dark-gray;
+  }
+  /* Mostra o submenu no evento de mouse hover */
+  .menu > .menu-list > li:hover > .sub-menu {
+    display: block;
+  }
+  /* Configura o estilo do submenu */
+  .menu > .menu-list > li > .sub-menu {
+    position: absolute;
+    top: 50px;
+    left: 5px;
+    min-width: 200px;
+    z-index: 1000;
+    display: none;
+    padding: 0;
+  }
+  /* Configura os links do submenu */
+  .menu > .menu-list > li > .sub-menu > li > a {
+      padding: 10px 20px;
+      &:hover {
+          background-color: black;
+      }
+  }
+  /* Clearfix para o menu */
+  .menu:after {
+    content: '.';
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+  }

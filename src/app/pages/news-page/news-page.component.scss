@@ -6,8 +6,15 @@
         color: white;
         padding-bottom: 40px;
         font-weight: 700;
+        @include mobile {
+            margin: 0 20px;
+            font-size: 28px;
+        }
     }
     &__image {
+        @include mobile {
+            margin: 0 20px;
+        }
         img {
             width: 100%;
         }
@@ -17,11 +24,19 @@
         font-size: 20px;
         padding: 70px 0;
         font-size: 28px;
+        @include mobile {
+            font-size: 20px;
+            padding: 70px 20px;
+        }
     }
     &__react-share {
         background-color: black;
         height: auto;
         padding: 20px;
+        @include mobile {
+            text-align: center;
+            margin: 0 20px;
+        }
         &__icon {
             color: white;
             margin: 10px 20px;
@@ -31,6 +46,31 @@
                 color: $orange;
             }
         }
+        &__share {
+            display: inline-block;
+            float: right;
+            margin: 20px 0;
+            @include mobile {
+                float: none;
+                margin-top: 30px;
+            }
+            .facebook {
+                font-size: 40px;
+                margin: 10px 20px;
+                &:hover {
+                    cursor: pointer;
+                    color: #3b5999;
+                }
+            }
+            .twitter {
+                font-size: 40px;
+                margin: 10px 20px;
+                &:hover {
+                    cursor: pointer;
+                    color: #1ea1f3;
+                }
+            }
+        }
         span {
             color: white;
             text-align: center;
@@ -38,9 +78,51 @@
     }
     &__comments {
         padding-top: 50px;
+        @include mobile {
+            margin: 0 20px;
+        }
         &__title {
             color: white;
             font-size: 22px;
+        }
+        &__item {
+            color: white;
+            background-color: black;
+            padding: 20px 30px;
+            margin: 60px 0;
+            img {
+                width: 80px;
+            }
+            .author {
+                margin-left: 40px;
+            }
+            .date {
+                margin-left: 20px;
+                font-weight: 300;
+                font-style: italic;
+                font-size: 16px;
+            }
+            p {
+                margin-top: 20px;
+            }
+            @include mobile {
+                img {
+                    width: 50px;
+                }
+                .author {
+                    margin-left: 0;
+                    font-size: 20px;
+                    display: block;
+                    margin-top: 20px;
+                }
+                .date {
+                    display: block;
+                    margin-left: 0;
+                }
+                p {
+                    font-size: 18px;
+                }   
+            }
         }
     }
 }

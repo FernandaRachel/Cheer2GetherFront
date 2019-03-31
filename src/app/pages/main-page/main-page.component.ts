@@ -17,11 +17,11 @@ export class MainPageComponent implements OnInit {
               private _socket: SocketService) { }
 
   ngOnInit() {
-    debugger
     const user = new User('Fernanda');
     const msg = new Message(user, 'TESTING');
     this._socket.initSocket();
     this._socket.send(msg);
+
     this._mainPageService.getNews()
     .subscribe((response) => {
         this.callNews(response);
