@@ -16,6 +16,8 @@ import { DashboardCardComponent } from './components/dashboard-card/dashboard-ca
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { CommunityComponent } from './pages/community/community.component';
 import { NgxWebstorageModule } from 'ngx-webstorage';
+import { JwtModule, JwtModuleOptions } from '@auth0/angular-jwt';
+import { SocketService } from './shared/service/socket.service';
 
 
 
@@ -25,6 +27,13 @@ const config = new AuthServiceConfig([
     provider: new FacebookLoginProvider('320671691982969')
   },
 ]);
+
+// const JWT_Module_Options: JwtModuleOptions = {
+//     config: {
+//         tokenGetter: yourTokenGetter,
+//         whitelistedDomains: yourWhitelistedDomains
+//     }
+// };
 
 export function provideConfig() {
     debugger
@@ -50,13 +59,15 @@ export function provideConfig() {
     HttpClientModule,
     SocialLoginModule,
     NgxWebstorageModule.forRoot(),
+    // JwtModule.forRoot()
 
   ],
   providers: [
     {
       provide: AuthServiceConfig,
       useFactory: provideConfig
-    }
+    },
+    SocketService
   ],
   bootstrap: [AppComponent],
 })
