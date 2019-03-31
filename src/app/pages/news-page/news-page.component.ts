@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SocketService } from 'src/app/shared/service/socket.service';
 import { User, Message } from 'src/app/shared/models/user.model';
 import { SessionStorageService } from 'ngx-webstorage';
+import { MainPageService } from '../main-page/service/main-page.service';
 
 @Component({
   selector: 'app-news-page',
@@ -13,12 +14,18 @@ export class NewsPageComponent implements OnInit {
   public message: string;
   public comments = [];
   public user;
+  public news;
 
   constructor(
     private _socket: SocketService,
-    private _sessionStorage: SessionStorageService) { }
+    private _sessionStorage: SessionStorageService,
+    private _mainPageService: MainPageService) { }
 
   ngOnInit() {
+     this._mainPageService.getNewsByBanner()
+    .subscribe((resp) => {
+      this.news = resp[0];
+    });
     this.user = this._sessionStorage.retrieve('user');
     this._socket.initSocket();
     this._socket.onMessage((resp) => {

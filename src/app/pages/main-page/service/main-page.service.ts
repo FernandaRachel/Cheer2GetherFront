@@ -14,6 +14,10 @@ export class MainPageService {
     return this._httpClient.get(url.urls.news);
   }
 
+  public getNewsByBanner(): Observable<any> {
+    return this._httpClient.get(url.urls.banner);
+  }
+
   public getGroups(): Observable<any> {
     return this._httpClient.get(url.urls.group);
   }
