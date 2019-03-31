@@ -60,6 +60,16 @@ export class NewsPageComponent implements OnInit {
       this._socket.send(obj);
       }
     }
+
+    public sendReaction(reaction) {
+      const obj = {
+        from: {
+          type:"reaction",
+          name:"Waltton",
+          value: reaction,
+        },
+        content: this.message
+      }
+      this._socket.send(obj);
+    }
   }
-
-

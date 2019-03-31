@@ -43,15 +43,15 @@
 
   </div>
   <div class="news-page__react-share">
-      <div class="d-inline-block">
+      <div class="d-inline-block" (click)="sendReaction('up')">
         <i class="far fa-thumbs-up d-block news-page__react-share__icon"></i>
         <span class="d-block">111</span>
       </div>
-      <div class="d-inline-block">
+      <div class="d-inline-block" (click)="sendReaction('down')">
         <i class="far fa-thumbs-down d-block news-page__react-share__icon"></i>
         <span class="d-block">16</span>
       </div>
-      <div class="d-inline-block">
+      <div class="d-inline-block" (click)="sendReaction('beer')">
         <i class="fas fa-beer d-block news-page__react-share__icon"></i>
         <span class="d-block">911</span>
       </div>
