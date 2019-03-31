@@ -1,3 +1,28 @@
+@import '../../../variables';
+
+.main-page {
+  width: 75%;
+  margin: 0 auto;
+  padding-top: 70px;
+  h3 {
+    font-weight: 700;
+  }
+  hr {
+    border-top: 1px solid white;
+    padding-bottom: 70px;
+  }
+  &__news {
+    padding-bottom: 70px;
+  }
+  &__join {
+    background-color: $orange;
+    &:hover {
+      background-color: black;
+      color: white;
+      cursor: pointer;
+    }
+  }
+}
 .img-card {
   height: 11em;
 }
