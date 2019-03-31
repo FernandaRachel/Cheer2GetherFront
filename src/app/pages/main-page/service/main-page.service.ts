@@ -13,4 +13,8 @@ export class MainPageService {
   public getNews(): Observable<any> {
     return this._httpClient.get(url.urls.news);
   }
+
+  public getGroups(): Observable<any> {
+    return this._httpClient.get(url.urls.group);
+  }
 }
